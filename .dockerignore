@@ -1,0 +1,15 @@
+.git
+.github
+node_modules
+dist
+coverage
+.env*
+.idea
+.vscode
+tmp
+*.log
+*.opus
+*.ogg
+*.wav
+*.m4a
+*.mp3

@@ -147,3 +147,13 @@ vite.config.ts.timestamp-*
 
 # Turbo Repo
 .turbo
+
+# Generated audio and temporary work
+tmp/
+*.opus
+*.ogg
+*.wav
+*.m4a
+*.mp3
+.idea/
+.vscode/

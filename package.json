@@ -1,0 +1,26 @@
+{
+  "name": "audio-converter",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Small REST API for speech-friendly audio conversion with FFmpeg",
+  "type": "module",
+  "license": "MIT",
+  "engines": { "node": ">=24 <25" },
+  "scripts": {
+    "start": "node dist/server.js",
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && node --test --test-timeout=10000 --test-concurrency=1 test/*.test.mjs",
+    "lint": "eslint src test eslint.config.mjs"
+  },
+  "dependencies": {
+    "@fastify/multipart": "10.1.3",
+    "fastify": "5.12.7"
+  },
+  "devDependencies": {
+    "@eslint/js": "10.0.1",
+    "@types/node": "24.19.2",
+    "eslint": "10.12.0",
+    "typescript": "6.0.3",
+    "typescript-eslint": "8.71.2"
+  }
+}
