@@ -6,7 +6,7 @@ services:
     expose:
       - "3000"
     networks:
-      coolify:
+      coolify: {}
       shared:
         aliases:
           - audio-converter
