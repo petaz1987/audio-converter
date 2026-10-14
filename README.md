@@ -103,6 +103,11 @@ removed when a request finishes or fails. A forced container kill cannot run
 application cleanup, so use ephemeral container storage for temporary audio
 rather than a persistent upload volume.
 
+## Deployment
+
+The service is containerized with Docker and can be deployed on any Docker-compatible platform.
+Production deployments can be automated directly from the `main` branch.
+
 ## License
 
 [MIT](LICENSE) for the application. FFmpeg and base-image packages retain their
