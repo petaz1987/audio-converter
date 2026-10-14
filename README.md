@@ -53,6 +53,12 @@ FFmpeg is included; the application runs as a non-root user. No Compose file is
 needed. The server listens on `0.0.0.0` inside the container; the example exposes
 it only on your machine's loopback interface.
 
+For Coolify or another Docker network setup, `docker-compose.yaml` keeps the
+application on external `coolify` and `backend` networks and gives it the
+`audio-converter` alias on `backend`. Override `AUDIO_CONVERTER_COOLIFY_NETWORK`
+and `AUDIO_CONVERTER_SHARED_NETWORK` when your network names differ. The
+Compose service exposes port 3000 only inside Docker.
+
 | Environment variable | Default | Meaning |
 | --- | --- | --- |
 | `PORT` | `3000` | Application port (1–65535); adjust Docker's port mapping too |
@@ -102,11 +108,6 @@ storage limits. Keep the base image and FFmpeg updated. Temporary audio is
 removed when a request finishes or fails. A forced container kill cannot run
 application cleanup, so use ephemeral container storage for temporary audio
 rather than a persistent upload volume.
-
-## Deployment
-
-The service is containerized with Docker and can be deployed on any Docker-compatible platform.
-Production deployments can be automated directly from the `main` branch.
 
 ## License
 

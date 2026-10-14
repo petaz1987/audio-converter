@@ -1,0 +1,20 @@
+services:
+  audio-converter:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    expose:
+      - "3000"
+    networks:
+      coolify:
+      shared:
+        aliases:
+          - audio-converter
+
+networks:
+  coolify:
+    name: ${AUDIO_CONVERTER_COOLIFY_NETWORK:-coolify}
+    external: true
+  shared:
+    name: ${AUDIO_CONVERTER_SHARED_NETWORK:-backend}
+    external: true
